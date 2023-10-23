@@ -1,6 +1,6 @@
 const knex = require("../db/connection");
 
-// CRUDL functions
+// CRUD functions
 async function create(table) {
   const newTables = await knex("tables").insert(table).returning("*");
   return newTables[0];
