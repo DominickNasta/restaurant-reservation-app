@@ -74,7 +74,7 @@ async function tableIsOccupied(req, res, next) {
   next();
 }
 
-//CRUDL functions
+//CRUD functions
 async function update(req, res, next) {
   const { reservation_id } = req.body.data;
   const { table_id } = req.params;
