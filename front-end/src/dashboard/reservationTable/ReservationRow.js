@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 export default function ReservationRow({ reservation, cancelRes }) {
+  const history = useHistory();
   function handleCancel() {
     return window.confirm(
       "Do you want to cancel this reservation? This cannot be undone."
     )
-      ? cancelRes(reservation)
+      ? cancelRes(reservation).then(history.go(0))  
       : null;
   }
 
