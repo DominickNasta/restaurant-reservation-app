@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export default function ReservationRow({ reservation, cancelRes }) {
   function handleCancel() {
@@ -22,23 +23,23 @@ export default function ReservationRow({ reservation, cancelRes }) {
       </td>
       <td>
         {reservation.status === "booked" ? (
-          <link
-            className="btn btn-secondary"
-            role="button"
-            href={`/reservations/${reservation.reservation_id}/seat`}
+          <Link
+          className="btn btn-secondary"
+          role="button"
+          href={`/reservations/${reservation.reservation_id}/seat`}
           >
-            Seat
-          </link>
-        ) : null}
-      </td>
-      <td>
-        <link
+          Seat
+          </Link>
+          ) : null}
+          </td>
+          <td>
+          <Link
           className="btn btn-secondary"
           role="button"
           href={`/reservations/${reservation.reservation_id}/edit`}
-        >
+          >
           Edit
-        </link>
+          </Link>
       </td>
       <td>
         <button
