@@ -23,7 +23,7 @@ export default function ReservationTable({
         return res;
       });
       setReservations(updated);
-      history.go(0);
+      window.location.reload();
     } catch (error) {
       setError(error);
     }
